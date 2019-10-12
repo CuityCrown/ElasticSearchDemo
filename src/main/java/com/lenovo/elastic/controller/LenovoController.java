@@ -4,7 +4,6 @@ import com.lenovo.elastic.entity.LenovoBean;
 import com.lenovo.elastic.entity.QueryBean;
 import com.lenovo.elastic.service.ElasticServce;
 import com.lenovo.elastic.utils.ExecutorPoolUtils;
-import org.checkerframework.checker.units.qual.A;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +49,7 @@ public class LenovoController {
         AtomicInteger atomicInteger = new AtomicInteger(1);
         System.out.println(search.size()+"开启数量");
         for (LenovoBean lenovoBean : search1) {
-            ExecutorPoolUtils.execute(new Thread(() -> {
+            ExecutorPoolUtils.execute(() -> {
                 try {
                     QueryBean queryBean = new QueryBean();
                     queryBean.setIndex("sc_bom_fact_rt_cml_1");
@@ -62,7 +61,7 @@ public class LenovoController {
                 } finally {
                     countDownLatch.countDown();
                 }
-            }));
+            });
         }
         try {
             countDownLatch.await();

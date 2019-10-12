@@ -2,8 +2,6 @@ package com.lenovo.elastic.entity;
 
 import lombok.Data;
 
-import java.util.Map;
-
 /**
  * description:
  *

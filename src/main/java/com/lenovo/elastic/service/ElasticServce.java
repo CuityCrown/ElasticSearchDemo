@@ -1,7 +1,6 @@
 package com.lenovo.elastic.service;
 
 import com.lenovo.elastic.entity.QueryBean;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

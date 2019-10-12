@@ -1,7 +1,6 @@
 package com.lenovo.elastic;
 
 import com.lenovo.elastic.entity.LenovoBean;
-import com.lenovo.elastic.entity.MenuBean;
 import com.lenovo.elastic.entity.QueryBean;
 import com.lenovo.elastic.service.impl.ElasticServiceImpl;
 import org.elasticsearch.action.get.GetRequest;
