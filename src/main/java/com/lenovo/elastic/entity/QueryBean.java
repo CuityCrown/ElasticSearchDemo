@@ -1,6 +1,7 @@
 package com.lenovo.elastic.entity;
 
 import lombok.Data;
+import org.elasticsearch.index.query.QueryBuilder;
 
 /**
  * description:
@@ -22,10 +23,7 @@ public class QueryBean {
 
     private Integer totalSize;
 
-    /**
-     * 查询条件key value形式
-     */
-    private String condition;
+    private QueryBuilder query;
 
     private String[] fieldNames;
 
