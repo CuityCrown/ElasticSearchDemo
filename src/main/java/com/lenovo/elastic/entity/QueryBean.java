@@ -23,8 +23,9 @@ public class QueryBean {
 
     private Integer totalSize;
 
+    /**
+     * 查询条件
+     */
     private QueryBuilder query;
-
-    private String[] fieldNames;
 
 }

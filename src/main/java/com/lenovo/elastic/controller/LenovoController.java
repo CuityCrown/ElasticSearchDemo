@@ -45,7 +45,6 @@ public class LenovoController {
         queryBean1.setIndex("sc_bom_fact_rt_cml_1");
         queryBean1.setPageSize(6000);
         queryBean1.setQuery(QueryBuilders.matchQuery("meins","EA"));
-        queryBean1.setFieldNames(new String[]{"meins"});
         queryBean1.setPageNumber(1);
         List<LenovoBean> search1 = elasticService.search(queryBean1, LenovoBean.class);
 
@@ -59,7 +58,6 @@ public class LenovoController {
                     queryBean.setIndex("sc_bom_fact_rt_cml_1");
                     queryBean.setPageSize(1);
                     queryBean1.setQuery(QueryBuilders.matchQuery("idnrk",lenovoBean.getIdnrk()));
-                    queryBean.setFieldNames(new String[]{"idnrk"});
                     queryBean.setPageNumber(atomicInteger.getAndIncrement());
                     search.addAll(elasticService.search(queryBean, LenovoBean.class));
                 } finally {
